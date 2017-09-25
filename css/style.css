@@ -6,10 +6,13 @@
 	max-width: 980px;
 	width: 100%;
 	margin: auto;
-	height: 30px;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	box-shadow: gray 2px 2px 2px;
 }
+
 body {
-	background: #99CCFF;
+	/*background: #99CCFF;*/
 }
 #toTop {
 	width:55px;
@@ -33,42 +36,52 @@ body {
 }
 .about {
 	display: inline-block;
+	/*position: absolute;*/
 }
 .headTop {
 	/*height: 340px;*/ /*Высоту по контенту*/
-	background-color: #e4a92a;
+	background-image: url(../img/header.png);
 	border: none;
 	width: 100%;
-	display: flow-root;
+	height: 100%;
+	/*display: flow-root;*/
+
 }
 .leftDiv {
-	width: 40%;
+	width: 32%;
 	float: left;
-	margin: 2% 0 0 2%;
+	margin: 0;
+	/*display: inline-block;*/
+	padding: 1%;
 }
 .midDiv {
-	width: 30%;
-	font-size: 30px;
-	margin: 5% 0px 5% 0px;
+	width: 40%;
+	font-size: 24px;
+	margin: 3% 0px 5% 0px;	
 	text-align: center;
-	float: left;
+	
 }
-.rightDiv {
-	width: 26%;
+.rightdiv {
+	width: 20%;
 	text-align: right;
-	float: left;
-	margin: 4% 2% 0 0;
+	display: inline-block;
+	float: right;
+	padding: 3%;
 }
-.langPangel {
-	padding-left: 10px;
+.langPanel {
+	 list-style-type: none;
+}
+.langPanel li {
+	margin: 1% 1%;
+	display: inline;
+}
+.langPanel a:hover {
+opacity: 0.65;
 }
 .ico_lang {
 	max-width: 30px;
 }
-.textUnder {
-	text-align: left;
-	font-size: 10px;
-}
+
 .text {
 	color: #ffffff;
 	font-size: 70px;
@@ -76,7 +89,21 @@ body {
 }
 .logo {
 	max-width: 80px;
-	width: 100%;
+	display: inline-block;
+}
+.about a {
+	text-decoration: none;
+	color: white;
+	text-shadow: #5e8e5e 2px 2px 2px;
+}
+
+.about a:hover {
+	opacity: 0.65;
+}
+.textUnder {
+	text-align: left;
+	font-size: 10px;
+	color: black;
 }
 .navigate {
 	float: left;
@@ -86,17 +113,17 @@ body {
     height: 70px;
     width: 100%;
 }
-#menu {
+#menu1 {
 /* display: block; - ниже*/
     line-height: 70px;
     text-align: center;
-    /*color: #ffc010;*/
 }
-#menu > li:hover > ul {
+
+#menu1 > li:hover > ul {
 	display: block;
 	color: white;
 }
-#menu > li {
+#menu1 > li {
 	display: inline-block;
 	position: relative;
 }
@@ -169,7 +196,7 @@ body {
 .slider {
  z-index: 9;
  width: 100%;
- height: 290px;
+ height: 350px;
  overflow: hidden;
  margin: 0 0 0px;
  /*position: relative;*/
@@ -187,7 +214,7 @@ body {
  list-style-type: none;
  float: left;
  width: 10%;
- height: 290px;
+ height: 350px;
  }
  .slider .nav {
  position: relative;
@@ -401,3 +428,9 @@ input[type="submit"]:active {
 	display: inline-block;
 	vertical-align: middle;
 }
+/*для фиксации меню*/
+ #menu.fix {
+         position:fixed;
+            top:0; left:0;
+            width:100%;
+        }
