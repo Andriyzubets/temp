@@ -59,3 +59,16 @@ $(document).on("click", ".slider .nav span", function(e) { // slider click navig
 
  sliderJS(index, slider);
 });
+// Кнопка "Наверх"
+	$(function() {
+	$(window).scroll(function() {
+	if($(this).scrollTop() != 0) {
+	$('#toTop').fadeIn();
+	} else {
+	$('#toTop').fadeOut();
+	}
+	});
+	$('#toTop').click(function() {
+	$('body,html').animate({scrollTop:0},600);
+	});
+	});

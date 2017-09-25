@@ -11,6 +11,26 @@
 body {
 	background: #99CCFF;
 }
+#toTop {
+	width:55px;
+	height: 55px;
+	border-radius: 55px;
+	line-height: 55px;
+	background: green;
+	text-align:center;
+	position:fixed;
+	bottom:10px; /* отступ кнопки от нижнего края страницы*/
+	right:10px;
+	cursor:pointer;
+	display:none;
+	color:#fff;
+	font-family:verdana;
+	font-size:15px;
+	box-shadow: #5e8e5e 2px 2px 2px;
+}
+#toTop:hover {
+	font-size: 20px;
+}
 .about {
 	display: inline-block;
 }
@@ -32,7 +52,6 @@ body {
 	margin: 5% 0px 5% 0px;
 	text-align: center;
 	float: left;
-
 }
 .rightDiv {
 	width: 26%;
@@ -66,16 +85,16 @@ body {
     background-size: 100% 100%;
     height: 70px;
     width: 100%;
-    
 }
 #menu {
 /* display: block; - ниже*/
     line-height: 70px;
     text-align: center;
-    color: #ffc010
+    /*color: #ffc010;*/
 }
 #menu > li:hover > ul {
 	display: block;
+	color: white;
 }
 #menu > li {
 	display: inline-block;
@@ -87,18 +106,37 @@ body {
 	padding: 0 12px 0 11px;
 	text-transform: uppercase;
 }
+
 .sub-menu {
-	text-align: left;
-	font-size: 20px;
 	display: none;
 	position: absolute;
+	margin-left: -50%;
 }
 .subpanel {
 	background: #999999;
-	border: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-radius: 5px;
 	list-style-type: none;
-	color: black;
+	line-height: 35px;
+	/*color: black;*/
+	width: 220px;
 }
+.subpanel button {
+	width: 220px;
+	height: 35px;
+	font-size: 16px;
+	background: #ffc010;
+	color: #fff;
+	cursor: auto;
+	border: aqua;
+}
+.subpanel button:hover {
+	color: black;
+	text-shadow: gray 1px 1px 2px;
+	box-shadow: gray 1px 1px 2px;
+}
+
 .col {
 	color: black;
 }
@@ -106,8 +144,17 @@ body {
 	border-left: 2px solid black;
 	padding-left: 20px;
 }
-a {
+#menu a {
 	text-decoration: none;
+	color: #ffc010;	
+}
+#menu a:hover {
+	color: white;
+	text-shadow: white 1px 1px 2px;
+}
+#menu a:active, .subpanel button:active {
+	color: green;
+	text-shadow: green 1px 1px 2px;
 }
 .bottomDiv a:link {
     color: black; /* Цвет ссылок */
