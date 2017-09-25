@@ -33,63 +33,103 @@
 			});
 		});
 	</script>
+	<script>
+			$(document).ready(function(){
+ var $menu = $('menu');
+ $(window).scroll(function(){
+ if ( $(this).scrollTop() > 150 && $menu.hasClass('navigate') ){
+ $menu.removeClass('navigate').addClass('fix');
+ } else if($(this).scrollTop() <= 150 && $menu.hasClass('fix')) {
+$menu.removeClass('fix').addClass('navigate');
+}
+});
+});
+		</script>
+	<!-- 1. Сделал текст лого ссылками
+		 2. Сделал формат ссылок хедера
+		 3. Добавил слайды
+		 4. объем wrapper
+		 5. изменение блоков хедера
+		 6. изменение ссылок языков на список
+		 7. изменение фона хедера
+		  -->
 </head>
 <body>
 	<section class="wrapper">
 		<div class="headTop">
-		<div class="about leftDiv">
-			<img class="logo" src="img/logo.png">
-			<span class="about text">VINIT</span>
-			<p class="textUnder">СИЛА ІНОВАЦІЙНИХ ТА ІНФОРМАЦІЙНИХ ТЕХНОЛОГІЙ</p>
+			<div class="about leftDiv">
+				<a href="http://spectekhnika.com.ua">
+					<img class="logo" src="img/logo.png">
+				</a>
+				<span class="about text"><a href="http://spectekhnika.com.ua">VINIT</a></span>
+				<a href="http://spectekhnika.com.ua"><p class="textUnder">СИЛА ІНОВАЦІЙНИХ ТА ІНФОРМАЦІЙНИХ ТЕХНОЛОГІЙ
+				</p></a>
 			</div>
-		<div class="about midDiv">
-			<span><a href="tel:+380935004421">+38 093 500 44 21
-							</a></span>
-			<br>
-			<span><a href="mailto:zubets.andriy@gmail.com">zubets.andriy@gmail.com</a></span>
+			<div class="about midDiv">
+				<span>
+					<a href="tel:+380935004421">+38 093 500 44 21
+					</a>
+				</span>
+				<br>
+				<span>
+					<a href="mailto:zubets.andriy@gmail.com">zubets.andriy@gmail.com
+					</a>
+				</span>
+			</div>
+			<div class="rightdiv">
+				<ul class="langPanel">
+					<li>
+						<a href="#"><img src="img/langUA.png" alt="UK" class="ico_lang"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/langEN.png" alt="EN" class="ico_lang"></a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/langRU.png" alt="RU" class="ico_lang"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/pdf.png" alt="Donwload PDF" class="ico_lang">
+						</a>
+					</li>
+				</ul>
+			</div>
+			<nav id="menu" class="navigate">
+				<ul id="menu1">
+					<li class="navPanel">
+						<a href="#">Головна</a>
+					</li>
+					<li class="navPanel">
+						<a href="#catalog-part">Каталог</a>
+							<ul class="sub-menu">
+								<li class="subpanel"><a href="#navantazhuvach"><button>Навантажувачі</button></a></li>
+								<li class="subpanel"><a href="#ekskavator"><button>Екскаватори</button></a></li>
+								<li class="subpanel"><a href="#"><button>Прибиральні машини</button></a></li>
+								<li class="subpanel"><a href="#"><button>Електротягачі</button></a></li>
+								<li class="subpanel"><a href="#"><button>Катки</button></a></li>
+								<li class="subpanel"><a href="#"><button>Ковші</button></a></li>
+							</ul>
+					</li>
+					<li class="navPanel">
+						<a href="#service-part">Сервіс</a>
+					</li>
+					<li class="navPanel">
+						<a href="#finance-part">Фінансування</a>
+					</li>
+					<li class="navPanel">
+						<a href="#about-part">Про компанію</a>
+					</li>
+					<li class="navPanel">
+						<a href="#contacts-part">Контакти</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
-		<div class="about rightDiv">
-			<a class="langPangel" href="#"><img src="img/langUA.png" alt="UK" class="ico_lang"></a>
-			<a class="langPangel" href="#"><img src="img/langEN.png" alt="EN" class="ico_lang"></a>
-			<a class="langPangel" href="#"><img src="img/langRU.png" alt="RU" class="ico_lang"></a>
-			<a class="langPangel" href="#"><img src="img/pdf.png" alt="Donwload PDF" class="ico_lang"></a>
-		</div>
-		<div class="navigate">
-			<ul id="menu">
-				<li class="navPanel">
-					<a href="">Головна</a>
-				</li>
-				<li class="navPanel">
-					<a href="#catalog-part">Каталог</a>
-						<ul class="sub-menu">
-							<li class="subpanel"><a href="#navantazhuvach"><button>Навантажувачі</button></a></li>
-							<li class="subpanel"><a href="#ekskavator"><button>Екскаватори</button></a></li>
-							<li class="subpanel"><a href="#"><button>Прибиральні машини</button></a></li>
-							<li class="subpanel"><a href="#"><button>Електротягачі</button></a></li>
-							<li class="subpanel"><a href="#"><button>Катки</button></a></li>
-							<li class="subpanel"><a href="#"><button>Ковші</button></a></li>
-						</ul>
-				</li>
-				<li class="navPanel">
-					<a href="#service-part">Сервіс</a>
-				</li>
-				<li class="navPanel">
-					<a href="#finance-part">Фінансування</a>
-				</li>
-				<li class="navPanel">
-					<a href="#about-part">Про компанію</a>
-				</li>
-				<li class="navPanel">
-					<a href="#contacts-part">Контакти</a>
-				</li>
-			</ul>
-		</div>
-	</div>
 		<div class="slider">
 			<ul>
-				<li><img src="img/1.png" alt="1"></li>
-				<li><img src="img/2.png" alt="2"></li>
-				<li><img src="img/3.png" alt="3"></li>
+				<li><img src="img/slider/Navantazhuvach_slide.jpg" alt="Навантажувачі JCB"></li>
+				<li><img src="img/slider/jekskavator_slide.jpg" alt="Екскаватор JCB"></li>
+				<li><img src="img/slider/ekskavator_slide.jpg" alt="Екскаватор JCB"></li>
 			</ul>
 		</div>
 		<!-- Вставляю дизайн раздела -->
@@ -97,9 +137,9 @@
 			<h1>Каталог продукції</h1>
 		</div>
 		<div id="catalog">
-			<!-- забрал отсюда Н1 -->
+			<!-- забрал отсюда Н1 --><h2>Навантажувачі телескопічні</h2>
 			<div id="navantazhuvach" class="present">
-				<h2>Навантажувачі телескопічні</h2>
+				
 				<img src="img/teleskop.jpg" alt="Навантажувач телескопічний" class="cat">
 			</div>
 			<div class="description_right">
@@ -386,5 +426,6 @@
 		</div>
 	</section>
 	<div id="toTop"> ^ </DIV>
+		
 </body>
 </html>

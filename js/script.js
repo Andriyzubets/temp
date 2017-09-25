@@ -72,3 +72,5 @@ $(document).on("click", ".slider .nav span", function(e) { // slider click navig
 	$('body,html').animate({scrollTop:0},600);
 	});
 	});
+
+// фиксация меню
