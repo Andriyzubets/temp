@@ -11,6 +11,26 @@
 body {
 	background: #99CCFF;
 }
+#toTop {
+	width:55px;
+	height: 55px;
+	border-radius: 55px;
+	line-height: 55px;
+	background: green;
+	text-align:center;
+	position:fixed;
+	bottom:10px; /* отступ кнопки от нижнего края страницы*/
+	right:10px;
+	cursor:pointer;
+	display:none;
+	color:#fff;
+	font-family:verdana;
+	font-size:15px;
+	box-shadow: #5e8e5e 2px 2px 2px;
+}
+#toTop:hover {
+	font-size: 20px;
+}
 .about {
 	display: inline-block;
 }
