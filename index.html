@@ -2,242 +2,1305 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="imagetoolbar" content="no" />
 	<title>Спецтехніка ТОВ "ВИНАЙТИ"</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="js/script.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script>
+		!window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+	<!-- Всплывающие окна фото и описание -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("a[rel ^= ex]").fancybox({
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'titlePosition' 	: 'over',
+				'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+					return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+				}
+			});
+			$("a[rel ^= var]").fancybox({
+				'titlePosition'		: 'outside',
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none'
+			});
+		});
+	</script>
+	<!-- <script>
+			$(document).ready(function(){
+ var $menu = $('menu');
+ $(window).scroll(function(){
+ if ( $(this).scrollTop() > 150 && $menu.hasClass('navigate') ){
+ $menu.removeClass('navigate').addClass('fix');
+ } else if($(this).scrollTop() <= 150 && $menu.hasClass('fix')) {
+$menu.removeClass('fix').addClass('navigate');
+}
+});
+});
+		</script> -->
+	<!-- 1. Сделал текст лого ссылками
+		 2. Сделал формат ссылок хедера
+		 3. Добавил слайды
+		 4. объем wrapper
+		 5. изменение блоков хедера
+		 6. изменение ссылок языков на список
+		 7. изменение фона хедера
+		  -->
 </head>
 <body>
 	<section class="wrapper">
 		<div class="headTop">
-		<div class="about leftDiv">
-			<img class="logo" src="img/logo.png">
-			<span class="about text">VINIT</span>
-			<p class="textUnder">СИЛА ІНОВАЦІЙНИХ ТА ІНФОРМАЦІЙНИХ ТЕХНОЛОГІЙ</p>
+			<div class="about leftDiv">
+				<a href="http://spectekhnika.com.ua">
+					<img class="logo" src="img/logo.png">
+				</a>
+				<span class="about text"><a href="http://spectekhnika.com.ua">VINIT</a></span>
+				<a href="http://spectekhnika.com.ua"><p class="textUnder">СИЛА ІНОВАЦІЙНИХ ТА ІНФОРМАЦІЙНИХ ТЕХНОЛОГІЙ
+				</p></a>
 			</div>
-		<div class="about midDiv">
-			<span><a href="tel:+380935004421">+38 093 500 44 21
-							</a></span>
-			<br>
-			<span><a href="mailto:zubets.andriy@gmail.com">zubets.andriy@gmail.com</a></span>
+			<div class="about midDiv">
+				<span>
+					<a href="tel:+380636822106">+38 063 682 21 06
+					</a>
+				</span>
+				<br>
+				<span>
+					<a href="mailto:sales.spectekhnika@gmail.com">sales.spectekhnika@gmail.com
+					</a>
+				</span>
+			</div>
+			<div class="rightdiv">
+				<ul class="langPanel">
+					<li>
+						<a href="#"><img src="img/langUA.png" alt="UK" class="ico_lang"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/langEN.png" alt="EN" class="ico_lang"></a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/langRU.png" alt="RU" class="ico_lang"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/pdf.png" alt="Donwload PDF" class="ico_lang">
+						</a>
+					</li>
+				</ul>
+			</div>
+			<nav id="menu" class="navigate">
+				<ul id="menu1">
+					<li class="navPanel">
+						<a href="#">Головна</a>
+					</li>
+					<li class="navPanel">
+						<a href="#catalog-part">Каталог</a>
+							<ul class="sub-menu">
+								<li class="subpanel"><a href="#telescope"><button>Навантажувачі телескопічні</button></a></li>
+								<li class="subpanel"><a href="#navantazhuvach"><button>Навантажувачі</button></a></li>
+								<li class="subpanel"><a href="#ekskavator"><button>Екскаватори</button></a></li>
+								<li class="subpanel"><a href="#prybyralni"><button>Прибиральні машини</button></a></li>
+								<li class="subpanel"><a href="#tyagachy"><button>Електротягачі</button></a></li>
+								<li class="subpanel"><a href="#katky"><button>Катки</button></a></li>
+								<li class="subpanel"><a href="#kovshy"><button>Ковші</button></a></li>
+							</ul>
+					</li>
+					<li class="navPanel">
+						<a href="#service-part">Сервіс</a>
+					</li>
+					<li class="navPanel">
+						<a href="#finance-part">Фінансування</a>
+					</li>
+					<li class="navPanel">
+						<a href="#about-part">Про компанію</a>
+					</li>
+					<li class="navPanel">
+						<a href="#contacts-part">Контакти</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
-		<div class="about rightDiv">
-			<a class="langPangel" href="#"><img src="img/langUA.png" alt="UK" class="ico_lang"></a>
-			<a class="langPangel" href="#"><img src="img/langEN.png" alt="EN" class="ico_lang"></a>
-			<a class="langPangel" href="#"><img src="img/langRU.png" alt="RU" class="ico_lang"></a>
-			<a class="langPangel" href="#"><img src="img/pdf.png" alt="Donwload PDF" class="ico_lang"></a>
-		</div>
-		<div class="navigate">
-			<ul id="menu">
-				<li class="navPanel" style="border: none;">
-					<a href="">Головна</a>
-				</li>
-				<li class="navPanel">
-					<a href="#catalog">Каталог</a>
-						<ul class="sub-menu">
-							<li class="subpanel"><a href="#navantazhuvach">Навантажувач</a></li>
-							<li class="subpanel"><a href="#ekskavator">Екскаватори</a></li>
-							<li class="subpanel"><a href="#">Прибиральны машини</a></li>
-							<li class="subpanel"><a href="#>Електротягачі</a></li>
-							<li class="subpanel"><a href="#">Катки</a></li>
-							<li class="subpanel"><a href="#">Ковші</a></li>
-						</ul>
-				</li>
-				<li class="navPanel">
-					<a href="#service">Сервіс</a>
-				</li>
-				<li class="navPanel">
-					<a href="#finance">Фінансування</a>
-				</li>
-				<li class="navPanel">
-					<a href="#about">Про компанію</a>
-				</li>
-				<li class="navPanel">
-					<a href="#contacts">Контакти</a>
-				</li>
-			</ul>
-		</div>
-	</div>
 		<div class="slider">
 			<ul>
-				<li><img src="img/1.png" alt="1"></li>
-				<li><img src="img/2.png" alt="2"></li>
-				<li><img src="img/3.png" alt="3"></li>
+				<li><img src="img/slider/Navantazhuvach_slide.jpg" alt="Навантажувачі JCB"></li>
+				<li><img src="img/slider/jekskavator_slide.jpg" alt="Екскаватор JCB"></li>
+				<li><img src="img/slider/ekskavator_slide.jpg" alt="Екскаватор JCB"></li>
 			</ul>
 		</div>
-		<div id="catalog">
+		<!-- Вставляю дизайн раздела -->
+		<div id="catalog-part" class="line-parts">
 			<h1>Каталог продукції</h1>
-			<div id="navantazhuvach" class="present">
-				<h2>Навантажувачі телескопічні</h2>
-				<img src="img/teleskop.jpg" alt="Навантажувач телескопічний" class="cat">
-			</div>
-			<div class="description_right">
-				Телескопічний навантажувач ідеально підходить для більшості галузей промисловості, незамінний в цивільному, дорожньому і промисловому будівництві, в ритейлі, на виробничих майданчиках і складах, в сільськогосподарському секторі та ще в багатьох інших видах робіт.
-				Такий навантажувач ідеально підходить як для транспортування паллетних так і сипучих вантажів на значні відстані.
-			</div>
-			<table class="telescope">
-				<tr>
-					<td class="img_col">
-						Детальне зображення
-					</td>
-					<td class="nomenclature">
-						Найменування
-					</td>
-					<td class="year">
-						Рік <br>випуску
-					</td>
-					<td class="output">
-						Напрацювання, мотогодин
-					</td>
-					<td class="price">
-						Ціна
-					</td>
-				</tr>
-				<tr>
-					<td class="img_col">
-						<img src="img/jcb_531_70.jpg" alt="Телескопічний навантажувач jcb_531_70" title="Телескопічний навантажувач jcb_531_70" class="img_detailed">
-					</td>
-					<td class="nomenclature">
-						Навантажувач телескопічний JCB 540-70 б.в. JCB5AAJGC71197987
-					</td>
-					<td class="year">
-						2007
-					</td>
-					<td class="output">
-						1600
-					</td>
-					<td class="price">
-						35 000 &#8364;
-					</td>
-					<tr>
-					<td class="img_col">
-						<img src="img/jcb_540_70.jpg" alt="Телескопічний навантажувач jcb_540_70" title="Телескопічний навантажувач jcb_540_70" class="img_detailed">
-					</td>
-					<td class="nomenclature">
-						Навантажувач телескопічний JCB 540-70 б.в. JCB5AAJGCkhfkd38
-					</td>
-					<td class="year">
-						2006
-					</td>
-					<td class="output">
-						2500
-					</td>
-					<td class="price">
-						36 000 &#8364;
-					</td>
-				</tr>
-			</table>
-			<div class="description_left">
-				Ексаватор ідеально підходить для більшості галузей промисловості, незамінний в цивільному, дорожньому і промисловому будівництві, в ритейлі, на виробничих майданчиках і складах, в сільськогосподарському секторі та ще в багатьох інших видах робіт.
-				Такий навантажувач ідеально підходить як для транспортування паллетних так і сипучих вантажів на значні відстані.
-			</div>
-			<div id="ekskavator" class="present">
-				<h2>Екскаватори</h2>
-				<img src="img/ekskavator_mini.jpg" alt="Екскаватори" class="cat">
-			</div>
-			<table class="telescope">
-				<tr>
-					<td class="img_col">
-						Детальне зображення
-					</td>
-					<td class="nomenclature">
-						Найменування
-					</td>
-					<td class="year">
-						Рік <br>випуску
-					</td>
-					<td class="output">
-						Напрацювання, мотогодин
-					</td>
-					<td class="price">
-						Ціна
-					</td>
-				</tr>
-				<tr>
-					<td class="img_col">
-						<img src="img/jcb_531_70.jpg" alt="Телескопічний навантажувач jcb_531_70" title="Телескопічний навантажувач jcb_531_70" class="img_detailed">
-					</td>
-					<td class="nomenclature">
-						Навантажувач телескопічний JCB 540-70 б.в. JCB5AAJGC71197987
-					</td>
-					<td class="year">
-						2007
-					</td>
-					<td class="output">
-						1600
-					</td>
-					<td class="price">
-						35 000 &#8364;
-					</td>
-					<tr>
-					<td class="img_col">
-						<img src="img/jcb_540_70.jpg" alt="Телескопічний навантажувач jcb_540_70" title="Телескопічний навантажувач jcb_540_70" class="img_detailed">
-					</td>
-					<td class="nomenclature">
-						Навантажувач телескопічний JCB 540-70 б.в. JCB5AAJGCkhfkd38
-					</td>
-					<td class="year">
-						2006
-					</td>
-					<td class="output">
-						2500
-					</td>
-					<td class="price">
-						36 000 &#8364;
-					</td>
-				</tr>
-			</table>
 		</div>
-		<div id="service">
+		<div id="catalog">
+			<!-- забрал отсюда Н1 --><h2 id="telescope">Навантажувачі телескопічні</h2>
+			<div class="pres-cat">
+				<div class="present">
+					<img src="img/teleskop.jpg" alt="Навантажувач телескопічний" class="cat">
+				</div>
+				<div class="description_right">
+					Телескопічний навантажувач ідеально підходить для більшості галузей промисловості, незамінний в цивільному, дорожньому і промисловому будівництві, в ритейлі, на виробничих майданчиках і складах, в сільськогосподарському секторі та ще в багатьох інших видах робіт.
+					Такий навантажувач ідеально підходить як для транспортування паллетних так і сипучих вантажів на значні відстані.
+				</div>
+			</div>
+			<table class="telescope">
+				<!-- 1 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex" href="img/531-70-2007-1600/1.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2007-1600/1.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="img_detailed">
+						</a>
+						<a rel="ex" href="img/531-70-2007-1600/2.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2007-1600/2.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="hide">
+						</a>
+						<a rel="ex" href="img/531-70-2007-1600/3.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2007-1600/3.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="hide">
+						</a>
+						<a rel="ex" href="img/531-70-2007-1600/4.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2007-1600/4.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="hide">
+						</a>
+					</td>
+					
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var1" href="#inline1" title="Навантажувач телескопічний JCB 531-70 б.в. JCB5AAJGC 71197987">Навантажувач телескопічний JCB 531-70 б.в. JCB5AAJGC 71197987</a>
+						<div style="display: none;">
+							<div id="inline1" style="width:400px;height:300px;overflow:auto;">
+							Телескопічний навантажувач JCB, модель 531-70. Вантажопідйомність 3,1 тонни, загальний вага 6 900 кг. 2007 року випуску. <br>Пробіг 1600 мотогодин. <br>Тип двигуна - дизель, потужністю 85 к.с. <br>Коробка передач автоматична, 4 ступінчаста. <br>Витрата 6 літрів палива в мотогодина. <br>Шини 15,5х80х24. <br>Тиск гідравліки 260 Бар. <br>Комплектується вилами Палетними і 2,7 кубових зерновим ковшем<div class="br"></div>
+							Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2007
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						1600
+					</td>
+				</tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						35 000 &#8364;
+					</td>
+					<tr class="bottom"></tr>
+					<!-- 2 -->
+					<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex1" href="img/531-70-2009-3400/1.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2009-3400/1.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="img_detailed">
+						</a>
+						<a rel="ex1" href="img/531-70-2009-3400/2.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2009-3400/2.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="hide">
+						</a>
+						<a rel="ex1" href="img/531-70-2009-3400/3.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2009-3400/3.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="hide">
+						</a>
+							<a rel="ex1" href="img/531-70-2009-3400/4.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2009-3400/4.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="hide">
+						</a>
+							<a rel="ex1" href="img/531-70-2009-3400/5.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2009-3400/5.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="hide">
+						</a>
+							<a rel="ex1" href="img/531-70-2009-3400/6.jpg" title="Навантажувач телескопічний JCB 531-70 б.в.">
+							<img src="img/531-70-2009-3400/6.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в." title="Навантажувач телескопічний JCB 531-70 б.в." class="hide">
+						</a>
+					</td>
+					
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var2" href="#inline2" title="Навантажувач телескопічний JCB 531-70 б.в.">Навантажувач телескопічний JCB 531-70 б.в. JCB5AАТGК91517202</a>
+						<div style="display: none;">
+							<div id="inline2" style="width:400px;height:300px;overflow:auto;">
+							Телескопічний навантажувач JCB, модель 531-70. <br> Вантажопідйомність 3,1 тонни, загальний вага 6 900 кг. <br> 2009 року випуску. <br> Пробіг 3400 мотогодин. <br> Тип двигуна - турбодизель, потужністю 100 к.с. <br> Коробка передач автоматична, 4 ступінчаста. <br> Витрата 7 літрів палива в мотогодину. <br> Шини 15,5х80х24. <br> Тиск гідравліки 260 Бар. <br> Комплектується вилами палетними і 2,7 кубових зерновим ковшем.
+							<br> Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2009
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						3400
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						43 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+				<!-- 3 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex2" href="img/531-70-agri-2010/1.jpg" title="Навантажувач телескопічний JCB 531-70 AGRI б.в.">
+							<img src="img/531-70-agri-2010/1.jpg" alt="Навантажувач телескопічний JCB 531-70 AGRI б.в. " title="Навантажувач телескопічний JCB 531-70 AGRI б.в." class="img_detailed">
+						</a>
+						<a rel="ex2" href="img/531-70-agri-2010/2.jpg" title="Навантажувач телескопічний JCB 531-70 AGRI б.в.">
+							<img src="img/531-70-agri-2010/2.jpg" alt="Навантажувач телескопічний JCB 531-70 AGRI б.в." title="Навантажувач телескопічний JCB 531-70 AGRI б.в." class="hide">
+						</a>
+						<a rel="ex2" href="img/531-70-agri-2010/3.jpg" title="Навантажувач телескопічний JCB 531-70 AGRI б.в.">
+							<img src="img/531-70-agri-2010/3.jpg" alt="Навантажувач телескопічний JCB 531-70 AGRI б.в." title="Навантажувач телескопічний JCB 531-70 AGRI б.в." class="hide">
+						</a>
+							<a rel="ex2" href="img/531-70-agri-2010/4.jpg" title="Навантажувач телескопічний JCB 531-70 AGRI б.в.">
+							<img src="img/531-70-agri-2010/4.jpg" alt="Навантажувач телескопічний JCB 531-70 AGRI б.в." title="Навантажувач телескопічний JCB 531-70 AGRI б.в." class="hide">
+						</a>
+					</td>
+					
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var3" href="#inline3" title="Навантажувач телескопічний JCB 531-70 AGRI б.в.">Навантажувач телескопічний JCB 531-70 AGRI б.в. JCB5AASGE01518865 </a>
+						<div style="display: none;">
+							<div id="inline3" style="width:400px;height:300px;overflow:auto;">
+							Телескопічний навантажувач JCB, модель 531-70. <br>Тип стріли - AGRI. <br>Вантажопідйомність 3,1 тонни, загальна вага 6 900 кг. <br>2014 року випуску. <br>Пробіг 3000 мотогодин. <br>Тип двигуна - турбодизель, потужністю 130 к.с., зі зміненою геометрією турбіни. <br>Коробка передач автоматична, 6 ступенів вперед, стільки ж назад. <br>Максимальна швидкість 50 км / ч.<br> Витрата 7 літрів палива в мотогодину. <br>Гідравліка - джойстик, варто аксіально-поршневий насос, який дозволяє виконувати три функції одночасно. <br>Виліт стріли 7 метрів. Комплектується палетними вилами і 2,7 кубовим зерновим ковшем. Також в комплекті йде магнітола і кондиціонер.
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2010
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						3000
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						45 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+				<!-- 4 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex3" href="img/531-70-2011-2100/1.jpg" title="Навантажувач телескопічний JCB 531-70 б.в. ">
+							<img src="img/531-70-2011-2100/1.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в. " title="Навантажувач телескопічний JCB 531-70 б.в. " class="img_detailed">
+						</a>
+						<a rel="ex3" href="img/531-70-2011-2100/2.jpg" title="Навантажувач телескопічний JCB 531-70 б.в. ">
+							<img src="img/531-70-2011-2100/2.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в. " title="Навантажувач телескопічний JCB 531-70 б.в. " class="hide">
+						</a>
+						<a rel="ex3" href="img/531-70-2011-2100/3.jpg" title="Навантажувач телескопічний JCB 531-70 б.в. ">
+							<img src="img/531-70-2011-2100/3.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в. " title="Навантажувач телескопічний JCB 531-70 б.в. " class="hide">
+						</a>
+						<a rel="ex3" href="img/531-70-2011-2100/4.jpg" title="Навантажувач телескопічний JCB 531-70 б.в. ">
+							<img src="img/531-70-2011-2100/4.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в. " title="Навантажувач телескопічний JCB 531-70 б.в. " class="hide">
+						</a>
+						<a rel="ex3" href="img/531-70-2011-2100/5.jpg" title="Навантажувач телескопічний JCB 531-70 б.в. ">
+							<img src="img/531-70-2011-2100/5.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в. " title="Навантажувач телескопічний JCB 531-70 б.в. " class="hide">
+						</a>
+						<a rel="ex3" href="img/531-70-2011-2100/6.jpg" title="Навантажувач телескопічний JCB 531-70 б.в. ">
+							<img src="img/531-70-2011-2100/6.jpg" alt="Навантажувач телескопічний JCB 531-70 б.в. " title="Навантажувач телескопічний JCB 531-70 б.в. " class="hide">
+						</a>
+					</td>
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var4" href="#inline4" title="Навантажувач телескопічний JCB 531-70 б.в. ">Навантажувач телескопічний JCB 531-70 б.в. JCB5AATGC01528537</a>
+						<div style="display: none;">
+							<div id="inline4" style="width:400px;height:300px;overflow:auto;">
+							Телескопічний навантажувач JCB, модель 531-70. <br>Вантажопідйомність 3,1 тонни, загальний вага 6 900 кг. <br>2011 випуску. <br>Пробіг 2100 мотогодин. <br>Тип двигуна - турбодизель, потужністю 100 к.с. Интеркулер. <br>Коробка передач автоматична, 4 ступінчаста. <br>Витрата 7 літрів палива в мотогодина. <br>Шини 15,5х80х24. <br>Тиск гідравліки 260 Бар. <br>Комплектується вилами плетними і 2,7 кубовим зерновим ковшем. <br>Є кондиціонер, магнітола, а також камера заднього виду.
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2011
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						2100
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						45 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+				<!-- 5 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex4" href="img/541-70-2008/1.jpg" title="Навантажувач телескопічний JCB 541-70 б.в. ">
+							<img src="img/541-70-2008/1.jpg" alt="Навантажувач телескопічний JCB 541-70 б.в. " title="Навантажувач телескопічний JCB 541-70 б.в. " class="img_detailed">
+						</a>
+						<a rel="ex4" href="img/541-70-2008/2.jpg" title="Навантажувач телескопічний JCB 541-70 б.в. ">
+							<img src="img/541-70-2008/2.jpg" alt="Навантажувач телескопічний JCB 541-70 б.в. " title="Навантажувач телескопічний JCB 541-70 б.в. " class="hide">
+						</a>
+						<a rel="ex4" href="img/541-70-2008/3.jpg" title="Навантажувач телескопічний JCB 541-70 б.в. ">
+							<img src="img/541-70-2008/3.jpg" alt="Навантажувач телескопічний JCB 541-70 б.в. " title="Навантажувач телескопічний JCB 541-70 б.в. " class="hide">
+						</a>
+						<a rel="ex4" href="img/541-70-2008/4.jpg" title="Навантажувач телескопічний JCB 541-70 б.в. ">
+							<img src="img/541-70-2008/4.jpg" alt="Навантажувач телескопічний JCB 541-70 б.в. " title="Навантажувач телескопічний JCB 541-70 б.в. " class="hide">
+						</a>
+						<a rel="ex4" href="img/541-70-2008/5.jpg" title="Навантажувач телескопічний JCB 541-70 б.в. ">
+							<img src="img/541-70-2008/5.jpg" alt="Навантажувач телескопічний JCB 541-70 б.в. " title="Навантажувач телескопічний JCB 541-70 б.в. " class="hide">
+						</a>
+					</td>
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var5" href="#inline5" title="Навантажувач телескопічний JCB 541-70 б.в.">Навантажувач телескопічний JCB 541-70 б.в. JCB5ADSGP81509391</a>
+						<div style="display: none;">
+							<div id="inline5" style="width:400px;height:300px;overflow:auto;">
+							Телескопічний навантажувач JCB, модель 541-70. <br> Експлуатаційна маса: 7,8т; <br>Експлуатаційна потужність: 81 кВт; <br>Вантажопідйомність: 3,5 т; <br>Швидкість: до 40,00 км / год. <br>Довжина: 5 000 мм; ширина: 2 230 мм; висота 2 490 мм. <br>Об'єм двигуна 4 400 см³. <br>Колеса: 15.5 / 80-24; дорожній просвіт: 400 мм; <br>радіус повороту: 3 700,00 мм; висота підйому: 7 000 мм; Виліт вертикальний 3 700 мм; <br>Тиск в гідросистемі: 26 МПа; <br>Об'єм паливного бака: 125 л; колісна база 2 750 мм
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2008
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						4000
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						38 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+				<!-- 6 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex6" href="img/533-105-2004/1.jpg" title="Навантажувач телескопічний  JCB 533-105 б.в. ">
+							<img src="img/533-105-2004/1.jpg" alt="Навантажувач телескопічний  JCB 533-105 б.в. " title="Навантажувач телескопічний  JCB 533-105 б.в. " class="img_detailed">
+						</a>
+						<a rel="ex6" href="img/533-105-2004/2.jpg" title="Навантажувач телескопічний  JCB 533-105 б.в. ">
+							<img src="img/533-105-2004/2.jpg" alt="Навантажувач телескопічний  JCB 533-105 б.в.  " title="Навантажувач телескопічний  JCB 533-105 б.в. " class="hide">
+						</a>
+					</td>
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var6" href="#inline6" title="Навантажувач телескопічний  JCB 533-105 б.в. ">Навантажувач телескопічний  JCB 533-105 б.в. SLP533AA4E1038577</a>
+						<div style="display: none;">
+							<div id="inline6" style="width:400px;height:300px;overflow:auto;">
+							<br>Телескопічний навантажувач JCB, модель 533-105. <br>Вантажопідйомність 3,3 тонни, загальна вага 8650 кг. <br>2004 року випуску. <br>Тип двигуна - турбо дизель, потужністю 61.5кВт. <br>Коробка передач автоматична, 4 ступінчаста. <br>Витрата 7 літрів палива в мотогодина. <br>Максимальна висота підйому - 10220мм. Максимальний передній виліт стріли 6830мм. <br>Комплектується вилами палетними і 2,7 кубовим зерновим ковшем.
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2004
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						6000
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						35 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+				<!-- 7 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex7" href="img/532-120-2004/1.jpg" title="Навантажувач телескопічний JCB 532-120 б.в. ">
+							<img src="img/532-120-2004/1.jpg" alt="Навантажувач телескопічний JCB 532-120 б.в. " title="Навантажувач телескопічний JCB 532-120 б.в. " class="img_detailed">
+						</a>
+						<a rel="ex7" href="img/532-120-2004/2.jpg" title="Навантажувач телескопічний JCB 532-120 б.в. ">
+							<img src="img/532-120-2004/2.jpg" alt="Навантажувач телескопічний JCB 532-120 б.в. " title="Навантажувач телескопічний JCB 532-120 б.в. " class="hide">
+						</a>
+						<a rel="ex7" href="img/532-120-2004/3.jpg" title="Навантажувач телескопічний JCB 532-120 б.в. ">
+							<img src="img/532-120-2004/3.jpg" alt="Навантажувач телескопічний JCB 532-120 б.в. " title="Навантажувач телескопічний JCB 532-120 б.в. " class="hide">
+						</a>
+					</td>
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var7" href="#inline7" title="Навантажувач телескопічний JCB 532-120 б.в. ">Навантажувач телескопічний JCB 532-120 б.в. SLP532FA4E1064344</a>
+						<div style="display: none;">
+							<div id="inline7" style="width:400px;height:300px;overflow:auto;">
+							<br>Номінальна вантажопідйомність в центрі ваги навантаження 3.2 т
+							<br>Стандартні шини 15.5 / 80-24
+							<br>робоча довжина висувною стріли 8 м
+							з вантажопідйомністю в центрі ваги навантаження 1.25 т
+							<br>Висота підйому 12 м
+							з вантажопідйомністю в центрі ваги навантаження 3.2 т
+							<br>Вага 9.14 т
+							<br>Транспортна довжина 5.84 м
+							<br>Транспортна ширина 2.35 м
+							<br>Висота в транспортному положенні 2.59 м
+							<br>Швидкість 20/32 км / год
+							<br>Виробник двигуна Perkins
+							<br>Модель двигуна 1004 T
+							<br>Потужність двигуна 74.6 кВт
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2004
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						6000
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						35 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+			</table>
+			<h2 id="navantazhuvach">Навантажувачі</h2>
+			<div class="pres-cat">
+				<div class="description_left">
+					Самохідні навантажувачі вилочні, які пропонує компанія "ВИНАЙТИ", допомагають вирішувати від легких до найважчих питань складського господарства і торгово-виробничих підприємств.
+					<br>Там, де не справляються рокли і штабелери, вилочні навантажувачі будуть вірними помічниками
+				</div>
+				<div  class="present">
+					<img src="img/pogruzchik.jpg" alt="Навантажувачі" class="cat">
+				</div>
+			</div>
+			<table class="telescope">
+				<!-- 11 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex11" href="img/toyota-02-8FGF15/1.jpg" title="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15">
+							<img src="img/toyota-02-8FGF15/1.jpg" alt="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15" title="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15" class="img_detailed">
+						</a>
+						<a rel="ex11" href="img/toyota-02-8FGF15/2.jpg" title="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15">
+							<img src="img/toyota-02-8FGF15/2.jpg" alt="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15 " title="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15" class="hide">
+						</a>
+						<a rel="ex11" href="img/toyota-02-8FGF15/3.jpg" title="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15">
+							<img src="img/toyota-02-8FGF15/3.jpg" alt="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15  " title="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15" class="hide">
+						</a>
+						<a rel="ex11" href="img/toyota-02-8FGF15/4.jpg" title="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15">
+							<img src="img/toyota-02-8FGF15/4.jpg" alt="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15" title="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15" class="hide">
+						</a>
+					</td>
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var11" href="#inline11" title="Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15">Навантажувач вилковий газовий, б/в TOYOTA-02-8FGF15</a>
+						<div style="display: none;">
+							<div id="inline11" style="width:400px;height:300px;overflow:auto;">
+							Вантажопідйомність 1,5 тонни. 
+							<br>Пробіг 7000 мотогодин. <br>Тип двигуна - газовий (пропан). <br>Коробка передач автоматична. <br>Витрата до 5 літрів палива в мотогодина. <br>Шини - гусматік. <br>Комплектується палетними вилами. Щогла дуплекс, з вильотом на 4,8 метрів з боковим зміщенням.
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2010
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						7000
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						11 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+				<!-- 12 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex12" href="img/cat-gp25k/1.jpg" title="Вилковий навантажувач Caterpillar GP25K  б/в"><img src="img/cat-gp25k/1.jpg" alt="Вилковий навантажувач Caterpillar GP25K  б/в" title="Вилковий навантажувач Caterpillar GP25K  б/в " class="img_detailed">
+						</a>
+						<a rel="ex12" href="img/cat-gp25k/2.jpg" title="Вилковий навантажувач Caterpillar GP25K  б/в">
+							<img src="img/cat-gp25k/2.jpg" alt="Вилковий навантажувач Caterpillar GP25K  б/в" title="Вилковий навантажувач Caterpillar GP25K  б/в " class="hide">
+						</a>
+						<a rel="ex12" href="img/cat-gp25k/3.jpg" title="Вилковий навантажувач Caterpillar GP25K  б/в">
+							<img src="img/cat-gp25k/3.jpg" alt="Вилковий навантажувач Caterpillar GP25K  б/в" title="Вилковий навантажувач Caterpillar GP25K  б/в " class="hide">
+						</a>
+						<a rel="ex12" href="img/cat-gp25k/4.jpg" title="Вилковий навантажувач Caterpillar GP25K  б/в">
+							<img src="img/cat-gp25k/4.jpg" alt="Вилковий навантажувач Caterpillar GP25K  б/в" title="Вилковий навантажувач Caterpillar GP25K  б/в " class="hide">
+						</a>
+						<a rel="ex12" href="img/cat-gp25k/5.jpg" title="Вилковий навантажувач Caterpillar GP25K  б/в">
+							<img src="img/cat-gp25k/5.jpg" alt="Вилковий навантажувач Caterpillar GP25K  б/в" title="Вилковий навантажувач Caterpillar GP25K  б/в " class="hide">
+						</a>
+						<a rel="ex12" href="img/cat-gp25k/6.jpg" title="Вилковий навантажувач Caterpillar GP25K  б/в">
+							<img src="img/cat-gp25k/6.jpg" alt="Вилковий навантажувач Caterpillar GP25K  б/в" title="Вилковий навантажувач Caterpillar GP25K  б/в " class="hide">
+						</a>
+						<a rel="ex12" href="img/cat-gp25k/7.jpg" title="Вилковий навантажувач Caterpillar GP25K  б/в">
+							<img src="img/cat-gp25k/7.jpg" alt="Вилковий навантажувач Caterpillar GP25K  б/в" title="Вилковий навантажувач Caterpillar GP25K  б/в" class="hide">
+						</a>
+					</td>
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var12" href="#inline12" title="Вилковий навантажувач Caterpillar GP25K  б/в">Вилковий навантажувач Caterpillar GP25K  б/в</a>
+						<div style="display: none;">
+							<div id="inline12" style="width:400px;height:300px;overflow:auto;">
+							Модель двигуна 4G63 <br>
+							Стандартні колеса 2x / 2SE<br>
+							Потужність двигуна 31 кВт<br>
+							Центр тяжкості навантаження 500 мм<br>
+							Вид приводу W<br>
+							Власна вага 3.73 т<br>
+							Вантажопідйомність 2 267,96 кг<br>
+							Швидкість 17,86 км / год<br>
+							Висота підйому 2 692,40 мм<br>
+							Швидкість підйому 0,61 м / сек<br>
+							Швидкість опускання стріли 0,50 м / сек
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2004
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						6200
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						9 500 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+				<!-- 13 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex13" href="img/case-sr150/1.jpg" title="Міні навантажувач Case SR150 ">
+							<img src="img/case-sr150/1.jpg" alt="Міні навантажувач Case SR150 " title="Міні навантажувач Case SR150 " class="img_detailed">
+						</a>
+						<a rel="ex13" href="img/case-sr150/2.jpg" title="Міні навантажувач Case SR150 ">
+							<img src="img/case-sr150/2.jpg" alt="Міні навантажувач Case SR150 " title="Міні навантажувач Case SR150 " class="hide">
+						</a>
+						<a rel="ex13" href="img/case-sr150/3.jpg" title="Міні навантажувач Case SR150 ">
+							<img src="img/case-sr150/3.jpg" alt="Міні навантажувач Case SR150 " title="Міні навантажувач Case SR150 " class="hide">
+						</a>
+					</td>
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var13" href="#inline13" title="Міні навантажувач Case SR150 ">Міні навантажувач Case SR150 NBM427666</a>
+						<div style="display: none;">
+							<div id="inline13" style="width:400px;height:300px;overflow:auto;">
+							Вантажопідйомність, кг 680 <br>
+							Загальна вага, кг 2400<br>
+							Тип двигуна дизельний<br>
+							Робочий об'єм двигуна, см3 2000<br>
+							Максимальна швидкість, км / год 10,8<br>
+							Дорожній просвіт, мм 178<br>
+							Колісна (гусенична) база, мм 941<br>
+							Габаритні розміри, мм 3028x1518x1919<br>
+							Виліт кромки робочого агрегату (ковша), мм 469<br>
+							Паливний бак, л 60,5<br>
+							Гідравлічна система, л. 15,3<br>
+							Висота вивантаження, мм 2246<br>
+							Шини 10х16,5
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2011
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						902
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						24 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+			</table>
+			<h2 id="ekskavator">Міні екскаватори</h2>
+			<div class="pres-cat">
+				<div  class="present">
+					
+					<img src="img/ekskavator_mini.jpg" alt="Екскаватори" class="cat">
+				</div>
+				<div class="description_right">
+					Міні ексаватор це спецтехніка, головне призначення якої - проведення землерийних робіт і будь-яких інших ландшафтних операцій в умовах обмеженого простору. Маневреність і висока продуктивність - однозначні плюси даного виду техніки, до того ж на міні-екскаватор ціна набагато нижча, ніж наекскаватор-навантажувач, а за своєю функціональністю їх можна вважати навіть краще, оскільки вони безперешкодно працюють навіть в місцях, недоступних для звичайних моделей..
+				</div>
+				
+			</div>
+			
+			<table class="telescope">
+				<!-- 21 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex21" href="img/8016-2012-1400/1.jpg" title="Міні екскаватор гусеничний JCB 8016 б/в">
+							<img src="img/8016-2012-1400/1.jpg" alt="Міні екскаватор гусеничний JCB 8016 б/в   " title="Міні екскаватор гусеничний JCB 8016 б/в  " class="img_detailed">
+						</a>
+						<a rel="ex21" href="img/8016-2012-1400/2.jpg" title="Міні екскаватор гусеничний JCB 8016 б/в  ">
+							<img src="img/8016-2012-1400/2.jpg" alt="Міні екскаватор гусеничний JCB 8016 б/в   " title="Міні екскаватор гусеничний JCB 8016 б/в  " class="hide">
+						</a>
+						<a rel="ex21" href="img/8016-2012-1400/3.jpg" title="Міні екскаватор гусеничний JCB 8016 б/в">
+							<img src="img/8016-2012-1400/3.jpg" alt="Міні екскаватор гусеничний JCB 8016 б/в   " title="Міні екскаватор гусеничний JCB 8016 б/в" class="hide">
+						</a>
+						<a rel="ex21" href="img/8016-2012-1400/4.jpg" title="Міні екскаватор гусеничний JCB 8016 б/в">
+							<img src="img/8016-2012-1400/4.jpg" alt="Міні екскаватор гусеничний JCB 8016 б/в " title="Міні екскаватор гусеничний JCB 8016 б/в  " class="hide">
+						</a>
+					</td>
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var21" href="#inline21" title="Міні екскаватор гусеничний JCB 8016 б/в">Міні екскаватор гусеничний JCB 8016 б/в у комплекті з ковшом </a>
+						<div style="display: none;">
+							<div id="inline21" style="width:400px;height:300px;overflow:auto;">
+							Міні екскаватор гусеничний JCB 8016. 14.7 кВт. <br>Рік випуску 2012. <br>Вага 1 657 кг. <br>Пробіг 1400 мотогодин. <br>Техніка в ідеальному стані, обслужена, готова до експлуатації.
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2012
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						1400
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						15 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+				<!-- 22 -->
+				<tr>
+					<td rowspan="5" class="img_col">
+						<a rel="ex22" href="img/8030-2012/1.jpg" title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом ">
+							<img src="img/8030-2012/1.jpg" alt="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " class="img_detailed">
+						</a>
+						<a rel="ex22" href="img/8030-2012/2.jpg" title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом ">
+							<img src="img/8030-2012/2.jpg" alt="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " class="hide">
+						</a>
+						<a rel="ex22" href="img/8030-2012/3.jpg" title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом ">
+							<img src="img/8030-2012/3.jpg" alt="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " class="hide">
+						</a>
+						<a rel="ex22" href="img/8030-2012/4.jpg" title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом ">
+							<img src="img/8030-2012/4.jpg" alt="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " class="hide">
+						</a>
+						<a rel="ex22" href="img/8030-2012/5.jpg" title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом ">
+							<img src="img/8030-2012/5.jpg" alt="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " class="hide">
+						</a>
+						<a rel="ex22" href="img/8030-2012/6.jpg" title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом ">
+							<img src="img/8030-2012/6.jpg" alt="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " class="hide">
+						</a>
+						<a rel="ex22" href="img/8030-2012/7.jpg" title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом ">
+							<img src="img/8030-2012/7.jpg" alt="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " class="hide">
+						</a>
+						<a rel="ex22" href="img/8030-2012/8.jpg" title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом ">
+							<img src="img/8030-2012/8.jpg" alt="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом " class="hide">
+						</a>
+					</td>
+					<td class="nomenclature">
+						Найменування
+					</td>
+					<td class="descr">
+						<a rel="var22" href="#inline22" title="Міні екскаватор гусеничний. JCB 8030 б/в  в компл.з ковшом">Міні екскаватор гусеничний. JCB 8030 б/в у комплекті з ковшом</a>
+						<div style="display: none;">
+							<div id="inline22" style="width:400px;height:300px;overflow:auto;">
+							Міні екскаватор гусеничний JCB 8030. 14.7 кВт. <br>Рік випуску 2012. <br>Вага 1 657 кг. <br>Пробіг 1600 мотогодин. <br>Техніка в ідеальному стані, обслужена, готова до експлуатації.
+							<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Рік випуску
+					</td>
+					<td class="descr">
+						2012
+					</td>
+				</tr>
+				<tr>
+					
+					<td class="nomenclature">
+						Напрацювання, мотогодин
+					</td>
+					<td class="descr">
+						1600
+					</td>
+				</tr>
+				<tr>
+					<td class="nomenclature">
+						Ціна
+					</td>
+					<td class="descr">
+						23 000 &#8364;
+					</td>
+				</tr>
+				<tr class="bottom"></tr>
+			</table>
+			<h2 id="prybyralni">Прибиральні машини</h2>
+			<div class="pres-cat">
+				<div class="description_left">
+					Компактні вакуумні підмітально-прибиральні машини, які пропонує компанія "ВИНАЙТИ", будуть незамінними помічниками в прибиранні внутрішніх виробничих, складських та торгових приміщень, а також територій з різними типами покриття (асфальт, бетон, ФЕМ).
+				</div>
+				<div  class="present">
+					<img src="img/schmidt-swingo.jpg" alt="Прибиральні машини" class="cat">
+				</div>
+			</div>
+			<table class="telescope">
+			<!-- 31 -->
+			<tr>
+				<td rowspan="5" class="img_col">
+					<a rel="ex31" href="img/swingo-200-2011/1.jpg" title="Прибиральна машина SCHMIDT SWINGO 200 б/в ">
+						<img src="img/swingo-200-2011/1.jpg" alt="Прибиральна машина SCHMIDT SWINGO 200 б/в " title="Прибиральна машина SCHMIDT SWINGO 200 б/в " class="img_detailed">
+					</a>
+					<a rel="ex31" href="img/swingo-200-2011/2.jpg" title="Прибиральна машина SCHMIDT SWINGO 200 б/в ">
+						<img src="img/swingo-200-2011/2.jpg" alt="Прибиральна машина SCHMIDT SWINGO 200 б/в " title="Прибиральна машина SCHMIDT SWINGO 200 б/в " class="hide">
+					</a>
+					<a rel="ex31" href="img/swingo-200-2011/3.jpg" title="Прибиральна машина SCHMIDT SWINGO 200 б/в ">
+						<img src="img/swingo-200-2011/3.jpg" alt="Прибиральна машина SCHMIDT SWINGO 200 б/в " title="Прибиральна машина SCHMIDT SWINGO 200 б/в " class="hide">
+					</a>
+					<a rel="ex31" href="img/swingo-200-2011/4.jpg" title="Прибиральна машина SCHMIDT SWINGO 200 б/в ">
+						<img src="img/swingo-200-2011/4.jpg" alt="МПрибиральна машина SCHMIDT SWINGO 200 б/в " title="Прибиральна машина SCHMIDT SWINGO 200 б/в " class="hide">
+					</a>
+					<a rel="ex31" href="img/swingo-200-2011/5.jpg" title="Прибиральна машина SCHMIDT SWINGO 200 б/в ">
+						<img src="img/swingo-200-2011/5.jpg" alt="МПрибиральна машина SCHMIDT SWINGO 200 б/в " title="Прибиральна машина SCHMIDT SWINGO 200 б/в " class="hide">
+					</a>
+					<a rel="ex31" href="img/swingo-200-2011/6.jpg" title="Прибиральна машина SCHMIDT SWINGO 200 б/в ">
+						<img src="img/swingo-200-2011/6.jpg" alt="Прибиральна машина SCHMIDT SWINGO 200 б/в " title="Прибиральна машина SCHMIDT SWINGO 200 б/в " class="hide">
+					</a>
+				</td>
+				<td class="nomenclature">
+					Найменування
+				</td>
+				<td class="descr">
+					<a rel="var31" href="#inline31" title="Прибиральна машина SCHMIDT SWINGO 200 б/в ">Прибиральна машина SCHMIDT SWINGO 200 б/в </a>
+					<div style="display: none;">
+						<div id="inline31" style="width:400px;height:300px;overflow:auto;">
+						Загальна вага 4,5 тонни. <br> 2011 випуску. <br>Пробіг 4000 мотогодин. <br>Тип двигуна - 62 кіловатний дизель. <br>Коробка передач автоматична. <br>Витрата близько 12 літрів палива в мотогодина. <br>Комплектується пилососом, алюмінієвим баком (близько 2 кубометрів), двома збиральними щітками. Встановлено KARCHER.<br> Максимальна висота перекидання 1,4 метра. <br>Є кондиціонер і магнітола.
+						<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="nomenclature">
+					Рік випуску
+				</td>
+				<td class="descr">
+					2011
+				</td>
+			</tr>
+			<tr>
+				
+				<td class="nomenclature">
+					Напрацювання, мотогодин
+				</td>
+				<td class="descr">
+					
+				</td>
+			</tr>
+			<tr>
+				<td class="nomenclature">
+					Ціна
+				</td>
+				<td class="descr">
+					30 000 &#8364;
+				</td>
+			</tr>
+			<tr class="bottom"></tr>
+			</table>
+			<!-- Электро тягачи -->
+			<h2 id="tyagachy">Електротягачі</h2>
+			<div class="pres-cat">
+				<div class="description_left">
+					
+				</div>
+				<div  class="present">
+					<img src="img/elektro.jpg" alt="Електротягачі" class="cat">
+				</div>
+			</div>
+			<table class="telescope">
+			<!-- 41 -->
+			<tr>
+				<td rowspan="5" class="img_col">
+					<a rel="ex41" href="img/tyagach-ef13s/1.jpg" title="Електро тягач EF1.3 S ">
+						<img src="img/tyagach-ef13s/1.jpg" alt="Електро тягач EF1.3 S " title="Електро тягач EF1.3 S " class="img_detailed">
+					</a>
+					<a rel="ex41" href="img/tyagach-ef13s/2.jpg" title="Електро тягач EF1.3 S ">
+						<img src="img/tyagach-ef13s/2.jpg" alt="Електро тягач EF1.3 S " title="Електро тягач EF1.3 S " class="hide">
+					</a>
+				</td>
+				<td class="nomenclature">
+					Найменування
+				</td>
+				<td class="descr">
+					<a rel="var41" href="#inline41" title="Електро тягач EF1.3 S ">Електро тягач EF1.3 S  с.н.А5848</a>
+					<div style="display: none;">
+						<div id="inline41" style="width:400px;height:300px;overflow:auto;">
+						Самохідний електротягач EF, модель 1.3S, вантажопідйомністю 0,5 тонни. <br>Тип двигуна - електричний. <br>Техніка в ідеальному стані, обслужена, готова до експлуатації
+						<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="nomenclature">
+					Рік випуску
+				</td>
+				<td class="descr">
+					1999
+				</td>
+			</tr>
+			<tr>
+				
+				<td class="nomenclature">
+					Напрацювання, мотогодин
+				</td>
+				<td class="descr">
+					
+				</td>
+			</tr>
+			<tr>
+				<td class="nomenclature">
+					Ціна
+				</td>
+				<td class="descr">
+					3 000 &#8364;
+				</td>
+			</tr>
+			<tr class="bottom"></tr>
+			</table>
+			<!-- Катки -->
+			<h2 id="katky">Катки</h2>
+			<div class="pres-cat">
+				<div  class="present">
+					<img src="img/katok.jpg" alt="Катки" class="cat">
+				</div>
+				<div class="description_right">
+					
+				</div>
+				
+			</div>
+			<table class="telescope">
+			<!-- 51 -->
+			<tr>
+				<td rowspan="5" class="img_col">
+					<a rel="ex51" href="img/tv1200/1.jpg" title="Каток колісний Terex TV1200 б.в">
+						<img src="img/tv1200/1.jpg" alt="Каток колісний Terex TV1200 б.в" title="Каток колісний Terex TV1200 б.в" class="img_detailed">
+					</a>
+					<a rel="ex51" href="img/tv1200/2.jpg" title="Каток колісний Terex TV1200 б.в">
+						<img src="img/tv1200/2.jpg" alt="Каток колісний Terex TV1200 б.в" title="Каток колісний Terex TV1200 б.в" class="hide">
+					</a>
+					<a rel="ex51" href="img/tv1200/3.jpg" title="Каток колісний Terex TV1200 б.в">
+						<img src="img/tv1200/3.jpg" alt="Каток колісний Terex TV1200 б.в" title="Каток колісний Terex TV1200 б.в" class="hide">
+					</a>
+					<a rel="ex51" href="img/tv1200/4.jpg" title="Каток колісний Terex TV1200 б.в">
+						<img src="img/tv1200/4.jpg" alt="Каток колісний Terex TV1200 б.в" title="Каток колісний Terex TV1200 б.в" class="hide">
+					</a>
+				</td>
+				<td class="nomenclature">
+					Найменування
+				</td>
+				<td class="descr">
+					<a rel="var51" href="#inline51" title="Каток колісний Terex TV1200 б.в">Каток колісний Terex TV1200 б.в</a>
+					<div style="display: none;">
+						<div id="inline51" style="width:400px;height:300px;overflow:auto;">
+						Пробіг 1223 мотогодин. <br>Тип двигуна - дизель. <br>Вага 3 тонни. <br>Потужність 24,5 кВт, ширина катка 1,2 метра, швидкість 10 км / ч. <br>Статичне навантаження 12.18 кг / см.<br> Техніка у відмінному стані.
+						<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="nomenclature">
+					Рік випуску
+				</td>
+				<td class="descr">
+					2005
+				</td>
+			</tr>
+			<tr>
+				
+				<td class="nomenclature">
+					Напрацювання, мотогодин
+				</td>
+				<td class="descr">
+					1217
+				</td>
+			</tr>
+			<tr>
+				<td class="nomenclature">
+					Ціна
+				</td>
+				<td class="descr">
+					10 000 &#8364;
+				</td>
+			</tr>
+			<tr class="bottom"></tr>
+			</table>
+			<!-- Ковши -->
+			<!-- 	<h2 id="kovshy">Навісне обладнання</h2>
+			<div class="pres-cat">
+				<div class="description_left">
+					
+				</div>
+				<div  class="present">
+					<img src="img/kovshy.jpg" alt="Навісне обладнання" class="cat">
+				</div>
+			</div>
+			<table class="telescope"> -->
+			<!-- 61 -->
+				<!-- <tr>
+				<td rowspan="5" class="img_col">
+					<a rel="ex61" href="img/tv1200/1.jpg" title="Каток колісний Terex TV1200 б.в">
+						<img src="img/tv1200/1.jpg" alt="Каток колісний Terex TV1200 б.в" title="Каток колісний Terex TV1200 б.в" class="img_detailed">
+					</a>
+				</td>
+				<td class="nomenclature">
+					Найменування
+				</td>
+				<td class="descr">
+					<a rel="var61" href="#inline61" title="Каток колісний Terex TV1200 б.в">Каток колісний Terex TV1200 б.в</a>
+					<div style="display: none;">
+						<div id="inline61" style="width:400px;height:300px;overflow:auto;">
+						Пробіг 1223 мотогодин. <br>Тип двигуна - дизель. <br>Вага 3 тонни. <br>Потужність 24,5 кВт, ширина катка 1,2 метра, швидкість 10 км / ч. <br>Статичне навантаження 12.18 кг / см.<br> Техніка у відмінному стані.
+						<br>Ціна зазначена із ПДВ, надається гарантія півроку або 250 мотогодин (що настане раніше).
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="nomenclature">
+					Рік випуску
+				</td>
+				<td class="descr">
+					2005
+				</td>
+			</tr>
+			<tr>
+				
+				<td class="nomenclature">
+					Напрацювання, мотогодин
+				</td>
+				<td class="descr">
+					1217
+				</td>
+			</tr>
+			<tr>
+				<td class="nomenclature">
+					Ціна
+				</td>
+				<td class="descr">
+					10 000 &#8364;
+				</td>
+			</tr>
+			<tr class="bottom"></tr>
+			</table>  -->
+		</div>
+		<div id="service-part" class="line-parts">
 			<h2>Сервіс та гарантія
 			</h2>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quam unde iste modi atque minus maiores quibusdam ipsum ad perferendis, ratione quas molestiae dolorem necessitatibus voluptatum numquam corrupti voluptate eligendi?
+		</div>
+		<div id="service">
+				<p class="serv-text">
+				ТОВ «ВИНАЙТИ» надає послуги з кваліфікаційного ремонту та обслуговування спецтехніки JCB, Linde, Toyota, Case з можливістю виїзду на об'єкт. Наші спеціалісти в мінімальний термін проведуть діагностику та усунуть різного роду несправність. На всі ремонтні роботи надається гарантія.</p><br>
+				<p class="serv-text">
+				Сервісний центр має все необхідне обладнання  для оперативного і якісного ремонту оперативної і якісної роботи навантажувачів, екскаваторів, міні-екскаваторів, навантажувачів, катків та іншої техніки. Наші майстри мають високій досвід і строго дотримуються інструкції виробника.
+				</p><br>
+				<p class="serv-text">
+				Віддаєте перевагу проводити ремонт і технічне обслуговування спецтехніки власними силами? ТОВ "ВИНАЙТИ" допоможе Вам замовити будь-які запасні частини і витратні матеріали. 
+				</p><br>
+				<p class="serv-text">
+				Всі комплектуючі є оригінальними і закуплені безпосередньо у виробника. Консультанти компанії допоможуть визначитися з переліком необхідних деталей і подбають про те, щоб потрібні запчастини були доставлені в мінімальний термін.
+				</p><br>
+				<p class="serv-text">
+				Для того щоб уточнити розцінки і повний перелік послуг з сервісу спецтехніки JCB, Linde, Toyota, Case зверніться до представників ТОВ "ВИНАЙТИ".
+				</p><br>
+				<p class="serv-text">
+                Телефон сервісної підтримки 
+                <a href="tel:+380636822106"> +38 063 682 21 06
+							</a>
 			</p>
 		</div>
-		<div id="finance">
+		<div id="finance-part" class="line-parts">
 			<h2>Фінансування
 			</h2>
+		</div>
+		<div id="finance">
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quam unde iste modi atque minus maiores quibusdam ipsum ad perferendis, ratione quas molestiae dolorem necessitatibus voluptatum numquam corrupti voluptate eligendi?
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dicta et eum! Enim, aperiam. A nesciunt odio odit animi dolores, error aut itaque illo maiores recusandae. Itaque, dolore omnis sit.
+				Компанія ТОВ" Нова-Технологія" співпрацює з ключевими компаніями-лідерами на ринку лізингу. Пропонуємо комплексну послугу фінансування спецтехніки незалежно від її типу, марки та вартості. Кожен клієнт зможе знайти оптимальний для себе спосіб придбання: фінансовий лізинг, фінансовий лізинг з сервісом, оперативний лізинг, зворотний лізинг, фінансування спецтехніки з пробігом після лізингу.
+
+УМОВИ ФІНАНСУВАННЯ
+
+Аванс від 35%.
+
+Строк фінансування від 12 до 48 місяців.
+
+Вибір валюти фінансування – UAH, USD, EUR.
+
+Вибір графіка платежів – класичний, ануїтет, дегресія, сезонний.
+
+У графік платежів вже включені та РІВНОМІРНО РОЗПОДІЛЕНІ на весь строк всі обов’язкові платежі при купівлі техніки: реєстраційні витрати, державні мито і збори, страхування КАСКО та ОСЦПВ на весь термін фінансування.
+
+ЛІЗИНГ – ЦЕ
+
+ШВИДКО
+
+Прийняття рішення про фінансування в строк від 3 до 10 робочих днів
+
+Клієнт підписує лише 1 договір лізингу
+
+ВИГІДНО
+
+Економія на податках: ПДВ, податок на прибуток
+
+Економія на початкових витратах в порівнянні з кредитом і придбанням за готівку
+
+Наявність більше 22 графіків платежів та 3 валюти фінансування на вибір клієнта
+
+Фінансування компаній зі строком діяльності від 12 місяців
+
+ЗРУЧНО
+
+Реєстрація, страхування, врегулюванням страхових випадків
+
+Предмет лізингу захищений від конфіскації та на нього неможливо накласти арешт
+
+Менеджер з фінансування ТОВ "Нова-Технологія"
+
+Ярослав Шметан +380 (97) 203 20 40 | sales@new-technology.com.ua
+
+Валюта фінансування USD означає фінансування у UAH з прив’язкою до курсу USD. Валюта фінансування EUR означає фінансування у UAH з прив’язкою до курсу EUR. Зазначена інформація не є публічною офертою та носить виключно інформаційний характер. Фінансує ТОВ «УЛФ-ФІНАНС». Розпорядження №454 від 02.03.2017 р. Детальну інформацію можна дізнатись у представників компанії.
 			</p>
 		</div>
-		<div id="about">
+		<div id="about-part" class="line-parts">
 			<h2>Про компанію
 			</h2>
+		</div>
+		<div id="about">
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quam unde iste modi atque minus maiores quibusdam ipsum ad perferendis, ratione quas molestiae dolorem necessitatibus voluptatum numquam corrupti voluptate eligendi?
-				<br>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod similique esse perferendis quidem voluptatem, ex deserunt voluptas ad officiis itaque animi enim soluta, at sit dolor quisquam est, nam repellendus.
+				
+
+Чудова новина для справжніх Підприємців, що цінують вигідні фінансові угоди та якість отримуваних послуг.
+В умовах сучасної економіки, можливість придбати необхідну техніку за ціною, що значно нижча за ринкову, та при цьому відчувати впевненість у якості, завдяки наявності гарантії - запорука отриманих надприбутків.
+Одним з основних напрямків діяльності ТОВ «ВИНАЙТИ» є продаж якісної техніки, завезеною з Європи та США. Серед бестселерів - будівельна техніка, навантажувачі, комунальна техніка виробництва компанії JCB, Manitou, Schmidt, Toyota та ін. 
+Для отримання конкурентоспроможної ціни, більшість техніки завозиться бувшою у використанні з не великим напрацюванням мотогодин. Команда професійних майстрів відновлює техніку до стану, наближеного до нового. Придбавши її, кожен Підприємець отримає гарантію.
+
+Чому саме ТОВ «ВИНАЙТИ»:
+
+Вже на протязі 7 днів з дня замовлення, ми доставимо придбану Вами техніку саме до місця її майбутньої роботи.
+
+На всю нашу техніку ми надамо гарантію терміном 6 місяців або напрацюванням 250 мотогодин.
+
+Гарантійне та післягарантійне обслуговування придбаної Вами техніки буде відбуватись на місці її постійної дислокації.
+
+На наших складах запчастин знаходяться оригінальні запчастини на всю техніку, яку ми пропонуємо.
+
+Ми маємо гнучку систему знижок. Дізнайтесь, яка знижка очікує на Вас
+
+
+Ми маємо можливість поставити під замовлення нову та б/в спецтехніку з Європи та США.
+
+
+З нами Ви зможете придбати техніку у лізинг від лізингових компаній-партнерів.
+
+
+Розрахунок здійснюється в гривнях з ПДВ.
+
+
+
+
+
+
+За більш детальною інформацією зверніться до нашого відділу продажів.
 			</p>
 		</div>
-		<div id="contacts">
+		<div id="contacts-part" class="line-parts">
 			<h2>Контакти
 			</h2>
+		</div>
+		<div id="contacts">
+			
 			<!-- <iframe src="code/index.php" frameborder="1"></iframe> -->
 			<div class="cover">
 		    	<h2 class="contact"></h2>
 		    	<form id="contactform"> 
 		       		<p class="contact">
-		        		<label for="name">Имя</label>
+		        		<label for="name">Ім'я</label>
 		        	</p> 
-		        	<input id="name" name="name" placeholder="Ваше имя" required="" tabindex="1" type="text"> 
+		        	<input id="name" name="name" placeholder="Ваше Ім'я" required="" tabindex="1" type="text"> 
 		         	<p class="contact">
 		         		<label for="email">Email</label>
 		         	</p> 
-		        	<input id="email" name="email" placeholder="example@sitehere.ru" required="" tabindex="2" type="text"> 
+		        	<input id="email" name="email" placeholder="exere.ru" required="" tabindex="2" type="text"> 
 		 	        <p class="contact">
 		 	        	<label for="Subject">Тема</label>
 		 	        </p> 
-		        	<input id="subject" name="subject" placeholder="Тема сообщения" required="" tabindex="2" type="text"> 
+		        	<input id="subject" name="subject" placeholder="Тема повідомлення" required="" tabindex="2" type="text"> 
 		 	        <p class="contact">
-		 	        	<label for="comment">Сообщение</label>
+		 	        	<label for="comment">Повідомлення</label>
 		 	        </p> 
 		       		<textarea name="comment" id="comment" tabindex="4"></textarea> 
 		       		<br>
-		       		<input name="submit" id="submit" tabindex="5" value="Отправить" type="submit"> 	 
+		       		<input name="submit" id="submit" tabindex="5" value="Відправити" type="submit"> 	 
 		   		</form> 
 			</div>
 			<div class="contactsinner">
@@ -247,7 +1310,7 @@
 							<img src="img/Phone.png" class="conico">
 						</td>
 						<td class="rightcon">
-							<a href="tel:+380935004421">+38 093 500 44 21
+							<a href="tel:+380636822106">+38 063 682 21 06
 							</a>
 						</td>
 					</tr>
@@ -256,7 +1319,7 @@
 							<img src="img/Viber.png" class="conico">
 						</td>
 						<td class="rightcon">
-							<a href="viber://chat?number=380935004421">+38 093 500 44 21</a>
+							<a href="viber://chat?number=380636822106">+38 063 682 21 06</a>
 						</td>
 					</tr>
 					<tr>
@@ -264,36 +1327,38 @@
 							<img src="img/Mail.png" class="conico">
 						</td>
 						<td class="rightcon">
-							<a href="mailto:zubets.andriy@gmail.com">zubets.andriy@gmail.com</a>
+							<a href="mailto:sales.spectekhnika@gmail.com">sales.spectekhnika@gmail.com</a>
 						</td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td class="leftcon4">
 							<img src="img/Skype.png" class="conico">
 						</td>
 						<td class="rightcon">
 							<a href="callto:zubetsandrew">zubetsandrew</a>
 						</td>
-					</tr>
-					<tr>
+					</tr> -->
+					<!-- <tr>
 						<td class="leftcon5">
 							<img src="img/LI.png" class="conico">
 						</td>
 						<td class="rightcon">
 							<a href="http://linkedin.com/in/andriyzubets" target="_blank">linkedin.com/in/andriyzubets</a>
 						</td>
-					</tr>
+					</tr> -->
 					<tr>
 						<td class="leftcon6">
 							<img src="img/FB.png" class="conico">
 						</td>
 						<td class="rightcon">
-							<a href="http://facebook.com/zubec" target="_blank">facebook.com/zubec</a>
+							<a href="http://fb.me/spectekhnika.jcb" target="_blank">fb.me/spectekhnika.jcb</a>
 						</td>
 					</tr>
 				</table>
 			</div>
 		</div>
 	</section>
+	<div id="toTop"> ^ </DIV>
+		
 </body>
 </html>
